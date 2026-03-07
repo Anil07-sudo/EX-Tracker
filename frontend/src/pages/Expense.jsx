@@ -261,12 +261,13 @@ const [overview, setOverview] = useState({
 
     try {
       // Convert date-only to ISO with client time before sending
-      const payload = {
-        description: newTransaction.description.trim(),
-        amount: parseFloat(newTransaction.amount),
-        category: newTransaction.category,
-        date: toIsoWithClientTime(newTransaction.date),
-      };
+     const payload = {
+  description: newTransaction.description.trim(),
+  amount: parseFloat(newTransaction.amount),
+  category: newTransaction.category,
+  type: "expense",
+  date: toIsoWithClientTime(newTransaction.date),
+};
 
       await handleApiRequest('post', '/expense/add', payload);
 
