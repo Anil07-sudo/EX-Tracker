@@ -9,7 +9,7 @@ import Expense from './pages/Expense';
 import Profile from './pages/Profile';
 
 
-const API_URL = "https://backend-eu5a.onrender.com/api";
+const API_URL = "https://backend-eu5a.onrender.com";
 
 // to get transaction from localstorage
 const getTransactionsFromStorage = () => {
