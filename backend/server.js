@@ -68,7 +68,6 @@
 //     console.log(`Server Started on http://localhost:${port}`);
 // });
 
-
 import express from "express";
 import cors from "cors";
 import serverless from "serverless-http";
@@ -82,6 +81,8 @@ import dashboardRouter from "./routes/dashboardRoute.js";
 
 const app = express();
 
+/* ---------------------- CORS CONFIG ---------------------- */
+
 const allowedOrigins = [
   "http://localhost:5173",
   "http://localhost:5174",
@@ -89,34 +90,40 @@ const allowedOrigins = [
   "https://ex-tracker-jsy2.vercel.app"
 ];
 
-// Middleware
 app.use(
   cors({
-    origin: [
-      "http://localhost:5173",
-      "https://ex-tracker-jsy2.vercel.app"
-    ],
-    methods: ["GET", "POST", "PUT", "DELETE"],
+    origin: allowedOrigins,
+    methods: ["GET", "POST", "PUT", "DELETE", "OPTIONS"],
+    allowedHeaders: ["Content-Type", "Authorization"],
     credentials: true
   })
 );
 
+// Handle preflight requests
+app.options("*", cors());
+
+/* ---------------------- MIDDLEWARE ---------------------- */
+
 app.use(express.json());
 app.use(express.urlencoded({ extended: true }));
 
-// DB
+/* ---------------------- DATABASE ---------------------- */
+
 connectDB();
 
-// Routes
+/* ---------------------- ROUTES ---------------------- */
+
 app.use("/api/user", userRouter);
 app.use("/api/income", incomeRouter);
 app.use("/api/expense", expenseRouter);
 app.use("/api/dashboard", dashboardRouter);
 
-// Test route
+/* ---------------------- TEST ROUTE ---------------------- */
+
 app.get("/", (req, res) => {
-  res.send("API WORKING");
+  res.status(200).send("API WORKING");
 });
 
-// Export serverless handler
+/* ---------------------- SERVERLESS EXPORT ---------------------- */
+
 export const handler = serverless(app);
