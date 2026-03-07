@@ -4,7 +4,7 @@ import axios from "axios";
 import { Eye, EyeOff, ArrowLeft, User, Mail ,Lock} from "lucide-react";
 import { signupStyles } from "../assets/dummyStyles";
 
-const Signup = ({ API_URL = "http://localhost:4000/api", onSignup }) => {
+const Signup = ({ API_URL = "https://ex-tracker-backend.onrender.com/api", onSignup }) => {
 
 
 const [name, setName] = useState("");

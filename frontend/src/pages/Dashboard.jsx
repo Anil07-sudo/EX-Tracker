@@ -25,7 +25,7 @@ import AddTransactionModal from "../components/Add";
 
 
 
-const API_BASE = "http://localhost:4000/api";
+const API_BASE = "https://ex-tracker-backend.onrender.com/api";
 
 const getAuthHeader = () => {
   const token =
