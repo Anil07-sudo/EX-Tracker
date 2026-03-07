@@ -7,7 +7,7 @@ import { EyeOff, Eye, User, Lock, X } from "lucide-react";
 import { useNavigate } from "react-router-dom";
 import {toast, ToastContainer} from 'react-toastify'
 
-const API_BASE = "https://ex-tracker-backend.onrender.com/api";
+const API_BASE = "https://ex-tracker-x9el.vercel.app";
 Modal.setAppElement('#root');
 // Move PasswordInput component outside of ProfilePage to prevent recreation on every render
 const PasswordInput = memo(({ name, label, value, error, showField, onToggle, onChange, disabled }) => (
