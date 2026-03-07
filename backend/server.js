@@ -20,6 +20,7 @@ const allowedOrigins =[
     "http://localhost:5173",
     "http://localhost:5174",
      "http://localhost:5175",
+       "https://ex-tracker-jsy2.vercel.app"
     
 
 ];
@@ -28,7 +29,14 @@ const allowedOrigins =[
 
 
 //middlewaress\
-app.use(cors());
+// app.use(cors());
+
+app.use(
+  cors({
+    origin: allowedOrigins,
+    credentials: true
+  })
+);
 // app.use(clerkMiddleware());
 app.use(express.json());
 app.use(express.urlencoded({  extended : true}));
