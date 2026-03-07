@@ -6,7 +6,7 @@ import { ChevronDown, LogOut, User } from 'lucide-react';
 import axios from 'axios';
 
 
-const BASE_URL = "https://backend-eu5a.onrender.com";
+const BASE_URL = "https://backend-eu5a.onrender.com/api";
 const Navbar = ({ user: propUser, onLogout }) => {
   const navigate = useNavigate();
   
