@@ -3,7 +3,7 @@ import { loginStyles } from "../assets/dummyStyles";
 import { Eye, EyeOff, Lock, Mail, User } from "lucide-react";
 import { Link, useNavigate } from "react-router-dom";
 import axios from "axios";
-const Login = ({ onLogin, API_URL = "https://backend-eu5a.onrender.com/api" }) => {
+const Login = ({ onLogin, API_URL = "https://backend-eu5a.onrender.com" }) => {
 const [email, setEmail] = useState("");
 const [password, setPassword] = useState("");
 const [showPassword, setShowPassword] = useState(false);
@@ -16,7 +16,7 @@ const navigate = useNavigate();
 const fetchProfile = async (token) => {
   if (!token) return null;
 
-    const res = await axios.get(`${API_URL}/user/me`, {
+    const res = await axios.get(`${API_URL}/api/user/me`, {
       headers: {
         Authorization: `Bearer ${token}`},
     });
@@ -45,7 +45,7 @@ const handleSubmit = async (e) => {
 
   try {
     const res = await axios.post(
-      `${API_URL}/user/login`,
+      `${API_URL}/api/user/login`,
       { email, password },
       { headers: { "Content-Type": "application/json" } }
     );
