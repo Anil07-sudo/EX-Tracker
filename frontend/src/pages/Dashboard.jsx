@@ -25,7 +25,7 @@ import AddTransactionModal from "../components/Add";
 
 
 
-const API_BASE ="https://ex-tracker-8jy5.vercel.app/api";
+const API_BASE ="https://backend-eu5a.onrender.com/api";
 
 const getAuthHeader = () => {
   const token =

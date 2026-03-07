@@ -30,7 +30,7 @@ import FinancialCard from "../components/FinancialCard";
 import { getTimeFrameRange, generateChartPoints } from "../components/Helpers";
 import { INCOME_COLORS, CATEGORY_ICONS_Inc } from "../assets/color";
 import { incomeStyles as styles } from "../assets/dummyStyles";
-const API_BASE = "https://ex-tracker-8jy5.vercel.app/api";
+const API_BASE = "https://backend-eu5a.onrender.com/api";
 
 function toIsoWithClientTime(dateValue) {
   if (!dateValue) {

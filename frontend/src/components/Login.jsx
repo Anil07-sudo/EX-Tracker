@@ -3,7 +3,7 @@ import { loginStyles } from "../assets/dummyStyles";
 import { Eye, EyeOff, Lock, Mail, User } from "lucide-react";
 import { Link, useNavigate } from "react-router-dom";
 import axios from "axios";
-const Login = ({ onLogin, API_URL = "https://ex-tracker-8jy5.vercel.app" }) => {
+const Login = ({ onLogin, API_URL = "https://backend-eu5a.onrender.com/api" }) => {
 const [email, setEmail] = useState("");
 const [password, setPassword] = useState("");
 const [showPassword, setShowPassword] = useState(false);

@@ -29,7 +29,7 @@ import AddTransactionModal from "../components/Add";
 import { getTimeFrameRange, generateChartPoints } from "../components/Helpers";
 import { CATEGORY_ICONS } from "../assets/color";
 import { expensePageStyles as styles } from "../assets/dummyStyles";
-const API_BASE = "https://ex-tracker-8jy5.vercel.app/api";
+const API_BASE = "https://backend-eu5a.onrender.com/api";
 
 /**
  * Helper: convert date (or datetime) to ISO by attaching client current time

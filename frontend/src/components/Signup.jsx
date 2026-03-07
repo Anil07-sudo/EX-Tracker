@@ -4,7 +4,7 @@ import axios from "axios";
 import { Eye, EyeOff, ArrowLeft, User, Mail ,Lock} from "lucide-react";
 import { signupStyles } from "../assets/dummyStyles";
 
-const Signup = ({ API_URL = "https://ex-tracker-8jy5.vercel.app/api", onSignup }) => {
+const Signup = ({ API_URL ="https://backend-eu5a.onrender.com/api", onSignup }) => {
 
 
 const [name, setName] = useState("");
