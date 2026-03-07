@@ -13,7 +13,8 @@ const createToken = (userId) =>
 // REGISTER USER
 export async function registerUser(req, res) {
 
-  const { name, email, password } = req.body;
+const { name, email, password } = req.body;
+const normalizedEmail = email.toLowerCase();
 
   if (!name || !email || !password) {
     return res.status(400).json({
@@ -38,7 +39,7 @@ export async function registerUser(req, res) {
 
   try {
 
-    if (await User.findOne({ email })) {
+  if (await User.findOne({ email: normalizedEmail })) {
       return res.status(409).json({
         success: false,
         message: "User already present"
@@ -46,12 +47,11 @@ export async function registerUser(req, res) {
     }
 
     const hashed = await bcrypt.hash(password, 10);
-
-    const user = await User.create({
-      name,
-      email,
-      password: hashed
-    });
+const user = await User.create({
+  name,
+  email: normalizedEmail,
+  password: hashed
+});
 
     const token = createToken(user._id);
 
@@ -74,8 +74,8 @@ export async function registerUser(req, res) {
 // LOGIN USER
 export async function loginUser(req, res) {
 
-  const { email, password } = req.body;
-
+const { email, password } = req.body;
+const normalizedEmail = email.toLowerCase();
   if (!email || !password) {
     return res.status(400).json({
       success: false,
@@ -85,7 +85,7 @@ export async function loginUser(req, res) {
 
   try {
 
-    const user = await User.findOne({ email });
+  const user = await User.findOne({ email: normalizedEmail });
 
     if (!user) {
       return res.status(401).json({

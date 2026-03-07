@@ -25,7 +25,7 @@ import AddTransactionModal from "../components/Add";
 
 
 
-const API_BASE ="https://backend-eu5a.onrender.com/api";
+const API_BASE ="https://backend-eu5a.onrender.com";
 
 const getAuthHeader = () => {
   const token =

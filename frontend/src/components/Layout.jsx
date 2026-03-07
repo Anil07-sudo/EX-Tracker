@@ -6,7 +6,7 @@ import { ArrowDown, ArrowUp, Car, ChevronDown, ChevronUp, Clock, CreditCard, Dol
 import { Outlet } from 'react-router-dom';
 import axios from "axios";
 // const API_BASE = "http://localhost:4000/api";
-const API_BASE = "https://backend-eu5a.onrender.com/api";
+const API_BASE = "https://backend-eu5a.onrender.com";
 const CATEGORY_ICONS = {
   Food: <Utensils className="w-4 h-4" />,
   Housing: <Home className="w-4 h-4" />,
