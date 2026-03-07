@@ -1,11 +1,11 @@
-import express from 'express';
-import cors from 'cors';
-import 'dotenv/config';
-import { connectDB } from './config/db.js';
-import userRouter from './routes/userRoute.js';
-import incomeRouter from './routes/incomeRoute.js';
-import expenseRouter from './routes/expenseRoute.js';
-import dashboardRouter from './routes/dashboardRoute.js';
+// import express from 'express';
+// import cors from 'cors';
+// import 'dotenv/config';
+// import { connectDB } from './config/db.js';
+// import userRouter from './routes/userRoute.js';
+// import incomeRouter from './routes/incomeRoute.js';
+// import expenseRouter from './routes/expenseRoute.js';
+// import dashboardRouter from './routes/dashboardRoute.js';
 
 
 
@@ -13,50 +13,84 @@ import dashboardRouter from './routes/dashboardRoute.js';
 
 
 
-const app =express();
-const port =4000;
+// const app =express();
+// const port =4000;
 
-const allowedOrigins =[
-    "http://localhost:5173",
-    "http://localhost:5174",
-     "http://localhost:5175",
+// const allowedOrigins =[
+//     "http://localhost:5173",
+//     "http://localhost:5174",
+//      "http://localhost:5175",
     
 
-];
+// ];
 
 
 
 
-//middlewaress\
+// //middlewaress\
+// app.use(cors());
+// // app.use(clerkMiddleware());
+// app.use(express.json());
+// app.use(express.urlencoded({  extended : true}));
+
+
+
+// //DB
+// connectDB();
+
+
+// //Routes
+
+// app.use("/api/user",userRouter)
+// app.use("/api/income",incomeRouter);
+// app.use("/api/expense",expenseRouter);
+// app.use("/api/dashboard",dashboardRouter);
+
+
+
+
+
+// app.get('/',(req,res)=>{
+//     res.send("API WORKING");
+    
+// });
+
+
+// app.listen(port, () =>{
+//     console.log(`Server Started on http://localhost:${port}`);
+// });
+
+import express from "express";
+import cors from "cors";
+import serverless from "serverless-http";
+import "dotenv/config";
+
+import { connectDB } from "./config/db.js";
+import userRouter from "./routes/userRoute.js";
+import incomeRouter from "./routes/incomeRoute.js";
+import expenseRouter from "./routes/expenseRoute.js";
+import dashboardRouter from "./routes/dashboardRoute.js";
+
+const app = express();
+
+// Middleware
 app.use(cors());
-// app.use(clerkMiddleware());
 app.use(express.json());
-app.use(express.urlencoded({  extended : true}));
+app.use(express.urlencoded({ extended: true }));
 
-
-
-//DB
+// Connect database
 connectDB();
 
+// Routes
+app.use("/api/user", userRouter);
+app.use("/api/income", incomeRouter);
+app.use("/api/expense", expenseRouter);
+app.use("/api/dashboard", dashboardRouter);
 
-//Routes
-
-app.use("/api/user",userRouter)
-app.use("/api/income",incomeRouter);
-app.use("/api/expense",expenseRouter);
-app.use("/api/dashboard",dashboardRouter);
-
-
-
-
-
-app.get('/',(req,res)=>{
-    res.send("API WORKING");
-    
+// Test route
+app.get("/", (req, res) => {
+  res.send("API WORKING");
 });
 
-
-app.listen(port, () =>{
-    console.log(`Server Started on http://localhost:${port}`);
-});
-
+// Export for Vercel serverless
+export const handler = serverless(app);
