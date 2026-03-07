@@ -73,7 +73,7 @@ const handleSubmit = async (e) => {
   setIsLoading(true);
 
   try {
-    const res = await axios.post(`${API_URL}/user/register`, {
+    const res = await axios.post(`${API_URL}api/user/register`, {
       name,
       email,
       password,
