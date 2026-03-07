@@ -1,7 +1,6 @@
 import express from "express";
 import cors from "cors";
 import serverless from "serverless-http";
-import "dotenv/config";
 
 import { connectDB } from "../config/db.js";
 import userRouter from "../routes/userRoute.js";
@@ -11,7 +10,7 @@ import dashboardRouter from "../routes/dashboardRoute.js";
 
 const app = express();
 
-/* ---------------------- CORS ---------------------- */
+/* ---------- CORS ---------- */
 
 const allowedOrigins = [
   "http://localhost:5173",
@@ -27,28 +26,31 @@ app.use(
   })
 );
 
-/* ---------------------- MIDDLEWARE ---------------------- */
+// allow preflight
+app.options("*", cors());
+
+/* ---------- MIDDLEWARE ---------- */
 
 app.use(express.json());
 app.use(express.urlencoded({ extended: true }));
 
-/* ---------------------- DATABASE ---------------------- */
+/* ---------- DATABASE ---------- */
 
 connectDB();
 
-/* ---------------------- ROUTES ---------------------- */
+/* ---------- ROUTES ---------- */
 
 app.use("/api/user", userRouter);
 app.use("/api/income", incomeRouter);
 app.use("/api/expense", expenseRouter);
 app.use("/api/dashboard", dashboardRouter);
 
-/* ---------------------- TEST ROUTE ---------------------- */
+/* ---------- TEST ---------- */
 
 app.get("/", (req, res) => {
-  res.status(200).send("API WORKING");
+  res.send("API WORKING");
 });
 
-/* ---------------------- EXPORT FOR VERCEL ---------------------- */
+/* ---------- SERVERLESS ---------- */
 
 export default serverless(app);
