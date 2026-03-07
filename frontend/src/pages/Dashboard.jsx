@@ -233,7 +233,7 @@ const Dashboard = () => {
   try {
     setLoading(true);
 
-    const res = await axios.get(`${API_BASE}/dashboard`, {
+    const res = await axios.get(`${API_BASE}/dashboard/overview`, {
       headers: getAuthHeader(),
     });
 
@@ -566,7 +566,7 @@ setNewTransaction({
             {displayedIncome.map((transaction) => {
               const IconComponent = INCOME_CATEGORY_ICONS[transaction.category] || INCOME_CATEGORY_ICONS.Other;
               return (
-                <div key={transaction.id} className={dashboardStyles.incomeTransactionItem}>
+                <div key={transaction._id} className={dashboardStyles.incomeTransactionItem}>
                   <div className={dashboardStyles.transactionContent}>
                     <div className={dashboardStyles.incomeIconContainer}>
                       {IconComponent}
