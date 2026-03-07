@@ -122,7 +122,7 @@ throw error;
 useEffect(() => {
   const fetchUserData = async () => {
     try {
-      const data = await handleApiRequest("get", "/user/me");
+const data = await handleApiRequest("get", "/api/user/me");
 
       if (data) {
         const userData = data.user || data;
@@ -162,7 +162,7 @@ useEffect(() => {
 const handleSaveProfile = async () => {
   try {
 
-    const data = await handleApiRequest("put", "/user/profile", tempUser);
+   const data = await handleApiRequest("put", "/api/user/profile", tempUser);
 
     if (data) {
       const updatedUser = data.user || data;
@@ -211,7 +211,7 @@ const handlePasswordSubmit = async (e) => {
   if (!validatePassword()) return;
 
   try {
-    await handleApiRequest("put", "/user/password", {
+await handleApiRequest("put", "/api/user/password", {
       currentPassword: passwordData.current,
       newPassword: passwordData.new,
     });
