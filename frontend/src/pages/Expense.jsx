@@ -23,7 +23,7 @@ import {
 import axios from "axios";
 import { exportToExcel } from "../utils/exportUtils";
 import FinancialCard from "../components/FinancialCard";
-import TimeFrameSelector from '../components/Timeframe';
+import TimeFrameSelector from "../components/TimeFrame";
 import TransactionItem from "../components/TranscationItem.jsx";
 import AddTransactionModal from "../components/Add";
 import { getTimeFrameRange, generateChartPoints } from "../components/Helpers";
