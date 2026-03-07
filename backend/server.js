@@ -12,13 +12,11 @@ const app = express();
 
 // Use environment port for deployment
 const port = process.env.PORT || 4000;
-
-// Allowed frontend URLs
 const allowedOrigins = [
   "http://localhost:5173",
   "http://localhost:5174",
   "http://localhost:5175",
-  "https://your-frontend.vercel.app" // add your deployed frontend here
+  "https://expense-tracker-vert-chi.vercel.app"
 ];
 
 // Middlewares

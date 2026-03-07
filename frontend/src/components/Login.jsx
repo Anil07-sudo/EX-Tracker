@@ -16,7 +16,7 @@ const navigate = useNavigate();
 const fetchProfile = async (token) => {
   if (!token) return null;
 
-    const res = await axios.get(`${API_URL}/api/user/me`, {
+    const res = await axios.get(`${API_URL}/user/me`, {
       headers: {
         Authorization: `Bearer ${token}`},
     });
@@ -45,7 +45,7 @@ const handleSubmit = async (e) => {
 
   try {
     const res = await axios.post(
-      `${API_URL}/api/user/login`,
+      `${API_URL}/user/login`,
       { email, password },
       { headers: { "Content-Type": "application/json" } }
     );
