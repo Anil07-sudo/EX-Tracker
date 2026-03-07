@@ -92,7 +92,11 @@ const allowedOrigins = [
 // Middleware
 app.use(
   cors({
-    origin: allowedOrigins,
+    origin: [
+      "http://localhost:5173",
+      "https://ex-tracker-jsy2.vercel.app"
+    ],
+    methods: ["GET", "POST", "PUT", "DELETE"],
     credentials: true
   })
 );
