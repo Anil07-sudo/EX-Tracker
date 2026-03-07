@@ -20,6 +20,7 @@ const allowedOrigins =[
     "http://localhost:5173",
     "http://localhost:5174",
      "http://localhost:5175",
+       "https://ex-tracker-git-main-anil07-sudos-projects.vercel.app"
 
 ];
 
