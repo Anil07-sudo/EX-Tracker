@@ -27,9 +27,20 @@ import AddTransactionModal from "../components/Add";
 
 const API_BASE ="https://backend-eu5a.onrender.com/api";
 
+// const getAuthHeader = () => {
+//   const token =
+//     localStorage.getItem("token") || localStorage.getItem("authToken");
+
+//   return token ? { Authorization: `Bearer ${token}` } : {};
+// };
+
+
 const getAuthHeader = () => {
   const token =
-    localStorage.getItem("token") || localStorage.getItem("authToken");
+    localStorage.getItem("token") ||
+    localStorage.getItem("authToken") ||
+    sessionStorage.getItem("token") ||
+    sessionStorage.getItem("authToken");
 
   return token ? { Authorization: `Bearer ${token}` } : {};
 };
