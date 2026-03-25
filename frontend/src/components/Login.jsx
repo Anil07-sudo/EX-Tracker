@@ -75,7 +75,7 @@ if (!profile && token) {
 
 
 if (!profile) profile = { email };
-persistAuth(profile, token,rememberMe);
+persistAuth(profile, token);
 
 if (typeof onLogin === "function") {
   try {
@@ -197,7 +197,7 @@ setPassword("")
     checked={rememberMe}
     onChange={(e) => setRememberMe(e.target.checked)}
     className={loginStyles.checkbox}
-   
+
   />
    <label htmlFor="remember" className={loginStyles.checkboxLabel}>
     Remember Me
