@@ -75,7 +75,7 @@ if (!profile && token) {
 
 
 if (!profile) profile = { email };
-persistAuth(profile, token);
+persistAuth(profile, token,rememberMe);
 
 if (typeof onLogin === "function") {
   try {
