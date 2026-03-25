@@ -551,7 +551,7 @@ const [overview, setOverview] = useState({
               <TransactionItem
                 key={transaction._id}
                 transaction={transaction}
-                isEditing={editingId === transaction._id}
+                isEditing={editingId === transaction.id}
                 editForm={editForm}
                 setEditForm={setEditForm}
                 onSave={handleEditTransaction}
