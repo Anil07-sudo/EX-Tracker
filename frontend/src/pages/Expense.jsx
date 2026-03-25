@@ -549,7 +549,7 @@ const [overview, setOverview] = useState({
             .slice(0, showAll ? filteredTransactions.length : 8)
             .map((transaction) => (
               <TransactionItem
-                key={transaction._id}
+                key={transaction.id}
                 transaction={transaction}
                 isEditing={editingId === transaction.id}
                 editForm={editForm}
