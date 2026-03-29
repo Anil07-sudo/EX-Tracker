@@ -555,7 +555,7 @@ Saving Rate
         
         <div className={styles.categories.categoryIconContainer}>
           {CATEGORY_ICONS[category] || (
-            <DollarSign className={styles.categories.categoryIcon} />
+            <IndianRupee className={styles.categories.categoryIcon} />
           )}
         </div>
 
