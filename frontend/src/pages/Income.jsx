@@ -9,7 +9,6 @@ import {
   TrendingUp,
   Filter,
   BarChart2,
-  IndianRupee,
 } from "lucide-react";
 import {
   BarChart,
@@ -520,7 +519,7 @@ const Income = () => {
         <FinancialCard
           icon={
             <div className={styles.iconGreen}>
-              <IndianRupee
+              <DollarSign
                 className={`w-4 h-4 md:w-5 md:h-5 ${styles.textGreen}`}
               />
             </div>
@@ -580,7 +579,7 @@ const Income = () => {
       <div className={styles.listContainer}>
         <div className={styles.header}>
           <h3 className={styles.sectionTitle}>
-            <IndianRupee className="w-5 h-5 md:w-6 md:h-6 text-green-500" />
+            <DollarSign className="w-5 h-5 md:w-6 md:h-6 text-green-500" />
             Income Transactions
             <span className="text-sm text-gray-500 font-normal">
               {" "}
@@ -627,7 +626,7 @@ const Income = () => {
           {filteredTransactions.length === 0 && (
             <div className={styles.emptyStateContainer}>
               <div className={styles.emptyStateIcon}>
-                <IndianRupee className="w-6 h-6 md:w-8 md:h-8 text-green-400" />
+                <DollarSign className="w-6 h-6 md:w-8 md:h-8 text-green-400" />
               </div>
               <p className={styles.emptyStateText}>
                 No income transactions found

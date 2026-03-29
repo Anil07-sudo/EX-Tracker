@@ -15,8 +15,7 @@ import {
 import { useOutletContext } from "react-router-dom";
 import { ArrowDown, BarChart2, ChevronDown, TrendingUp as ProfitIcon,
   PieChart as PieChartIcon, ChevronUp, DollarSign, PiggyBank, Plus,
-  ShoppingCart, TrendingDown, TrendingUp, Wallet,
-  IndianRupee
+  ShoppingCart, TrendingDown, TrendingUp, Wallet
 } from "lucide-react";
 import { calculateData, getPreviousTimeFrameRange, getTimeFrameRange } from "../components/Helpers";
 import FinancialCard from "../components/FinancialCard";
@@ -599,7 +598,7 @@ setNewTransaction({
             {incomeListForDisplay.length === 0 && (
               <div className={dashboardStyles.emptyState}>
                 <div className={dashboardStyles.emptyIconContainer("bg-green-50")}>
-                  <IndianRupee className="w-8 h-8 text-green-400" />
+                  <DollarSign className="w-8 h-8 text-green-400" />
                 </div>
                 <p className={dashboardStyles.emptyText}>No income transactions</p>
               </div>
