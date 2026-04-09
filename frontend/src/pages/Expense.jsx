@@ -9,6 +9,7 @@ import {
   TrendingDown,
   Filter,
   BarChart2,
+  IndianRupee,
 } from "lucide-react";
 import {
   AreaChart,
@@ -397,11 +398,11 @@ const [overview, setOverview] = useState({
         <FinancialCard
           icon={
             <div className={styles.iconOrange}>
-              <DollarSign className={`w-5 h-5 ${styles.textOrange}`} />
+              <IndianRupee className={`w-5 h-5 ${styles.textOrange}`} />
             </div>
           }
           label="Total Expenses"
-          value={`$${totalExpense.toLocaleString()}`}
+          value={`₹${totalExpense.toLocaleString()}`}
           additionalContent={
             <div className="mt-2 text-xs text-gray-500 flex items-center">
               <Calendar className="w-3 h-3 mr-1" /> {timeFrameRange.label}
@@ -417,7 +418,7 @@ const [overview, setOverview] = useState({
             </div>
           }
           label="Average Expense"
-          value={`$${averageExpense.toLocaleString()}`}
+          value={`₹${averageExpense.toLocaleString()}`}
           additionalContent={
             <div className="mt-2 text-xs text-gray-500 flex items-center">
               <Calendar className="w-3 h-3 mr-1" /> {filteredTransactions.length} transactions
@@ -475,10 +476,10 @@ const [overview, setOverview] = useState({
                 tickLine={false}
                 tick={{ fill: "#6b7280", fontSize: 12 }}
                 width={60}
-                tickFormatter={(value) => `$${value.toLocaleString()}`}
+                tickFormatter={(value) => `₹${value.toLocaleString()}`}
               />
               <Tooltip
-                formatter={(value) => [`$${Math.round(value).toLocaleString()}`, "Expense"]}
+                formatter={(value) => [`₹${Math.round(value).toLocaleString()}`, "Expense"]}
                 contentStyle={styles.tooltipContent}
               />
               <Area
@@ -509,7 +510,7 @@ const [overview, setOverview] = useState({
       <div className={styles.transactionsContainer}>
         <div className={styles.transactionsHeader}>
           <h3 className={styles.transactionsTitle}>
-            <DollarSign className="w-6 h-6 -mx-1.5 lg:-mx-2 md:-mx-0 text-orange-500" />
+            <IndianRupee className="w-6 h-6 -mx-1.5 lg:-mx-2 md:-mx-0 text-orange-500" />
             Expense Transactions
             <span className="text-sm text-gray-500 font-normal"> ({timeFrameRange.label})</span>
           </h3>
@@ -578,7 +579,7 @@ const [overview, setOverview] = useState({
           {filteredTransactions.length === 0 && (
             <div className={styles.emptyState}>
               <div className={styles.emptyStateIcon}>
-                <DollarSign className="w-8 h-8 text-orange-400" />
+                <IndianRupee className="w-8 h-8 text-orange-400" />
               </div>
               <p className={styles.emptyStateText}>No expense transactions found</p>
               <p className={styles.emptyStateSubtext}>

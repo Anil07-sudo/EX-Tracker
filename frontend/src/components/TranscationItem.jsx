@@ -131,8 +131,8 @@ const TransactionItem = ({
             <span
               className={transactionItemStyles.amountText(amountClass, classes)}
             >
-              {sign}$
-              {Number(transaction.amount).toLocaleString("en-US", {
+              {sign}₹
+              {Number(transaction.amount).toLocaleString("en-IN", {
                 maximumFractionDigits: 2,
                 minimumFractionDigits: 2,
               })}

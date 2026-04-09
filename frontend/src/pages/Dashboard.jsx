@@ -15,7 +15,8 @@ import {
 import { useOutletContext } from "react-router-dom";
 import { ArrowDown, BarChart2, ChevronDown, TrendingUp as ProfitIcon,
   PieChart as PieChartIcon, ChevronUp, DollarSign, PiggyBank, Plus,
-  ShoppingCart, TrendingDown, TrendingUp, Wallet
+  ShoppingCart, TrendingDown, TrendingUp, Wallet,
+  IndianRupee
 } from "lucide-react";
 import { calculateData, getPreviousTimeFrameRange, getTimeFrameRange } from "../components/Helpers";
 import FinancialCard from "../components/FinancialCard";
@@ -426,15 +427,15 @@ setNewTransaction({
 
     label="Total Balance"
 
-    value={`$${Math.round(displayIncome - displayExpenses).toLocaleString()}`}
+    value={`₹${Math.round(displayIncome - displayExpenses).toLocaleString()}`}
 
     additionalContent={
       <div className="flex items-center gap-2 mt-2 text-sm">
         <span className={dashboardStyles.balanceBadge}>
-          +${Math.round(displayIncome).toLocaleString()}
+          +₹{Math.round(displayIncome).toLocaleString()}
         </span>
         <span className={dashboardStyles.expenseBadge}>
-  -${Math.round(displayExpenses).toLocaleString()}
+  -₹{Math.round(displayExpenses).toLocaleString()}
 </span>
       </div>
     }
@@ -450,7 +451,7 @@ setNewTransaction({
 
     label={`${timeFrameRange.label}Savings`}
 
-    value={`$${Math.round(displaySavings).toLocaleString()}`}
+    value={`₹${Math.round(displaySavings).toLocaleString()}`}
 
     additionalContent={
 
@@ -540,7 +541,7 @@ setNewTransaction({
                 ))}
               </Pie>
               <Tooltip
-                formatter={(value) => [`$${Math.round(value).toLocaleString()}`, "Amount"]}
+                formatter={(value) => [`₹${Math.round(value).toLocaleString()}`, "Amount"]}
                 contentStyle={dashboardStyles.tooltipContent}
                 itemStyle={dashboardStyles.tooltipItem}
               />
@@ -588,7 +589,7 @@ setNewTransaction({
                     </div>
                   </div>
                   <div className={dashboardStyles.transactionAmount}>
-                    <p className={dashboardStyles.incomeAmount}>+${Math.abs(transaction.amount).toLocaleString()}</p>
+                    <p className={dashboardStyles.incomeAmount}>+₹{Math.abs(transaction.amount).toLocaleString()}</p>
                     <p className={dashboardStyles.transactionDate}>{new Date(transaction.date).toLocaleDateString()}</p>
                   </div>
                 </div>
@@ -598,7 +599,7 @@ setNewTransaction({
             {incomeListForDisplay.length === 0 && (
               <div className={dashboardStyles.emptyState}>
                 <div className={dashboardStyles.emptyIconContainer("bg-green-50")}>
-                  <DollarSign className="w-8 h-8 text-green-400" />
+                  <IndianRupee className="w-8 h-8 text-green-400" />
                 </div>
                 <p className={dashboardStyles.emptyText}>No income transactions</p>
               </div>
@@ -654,7 +655,7 @@ setNewTransaction({
                     </div>
                   </div>
                   <div className={dashboardStyles.transactionAmount}>
-                    <p className={dashboardStyles.expenseAmount}>-${Math.abs(transaction.amount).toLocaleString()}</p>
+                    <p className={dashboardStyles.expenseAmount}>-₹{Math.abs(transaction.amount).toLocaleString()}</p>
                     <p className={dashboardStyles.transactionDate}>{new Date(transaction.date).toLocaleDateString()}</p>
                   </div>
                 </div>

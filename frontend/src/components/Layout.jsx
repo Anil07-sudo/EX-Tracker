@@ -319,7 +319,7 @@ const Layout=({onLogout,user})=> {
         </p>
 
         <p className={styles.statCards.cardValue}>
-          ${stats.allTimeSavings.toLocaleString("en-US", {
+          ₹{stats.allTimeSavings.toLocaleString("en-US", {
   maximumFractionDigits: 2,
 })}
         </p>
@@ -330,7 +330,7 @@ const Layout=({onLogout,user})=> {
  </div>
       <p className={styles.statCards.cardFooter}>
   <span className="text-teal-600 font-medium">
-    +${stats.last30DaysSavings.toLocaleString()}
+    +₹{stats.last30DaysSavings.toLocaleString()}
   </span>{" "}
   this month
 </p>
@@ -350,7 +350,7 @@ const Layout=({onLogout,user})=> {
         </p>
 
         <p className={styles.statCards.cardValue}>
-          ${stats.last30DaysIncome.toLocaleString("en-US", {
+          ₹{stats.last30DaysIncome.toLocaleString("en-US", {
   maximumFractionDigits: 2,
 })}
         </p>
@@ -381,7 +381,7 @@ const Layout=({onLogout,user})=> {
         </p>
 
         <p className={styles.statCards.cardValue}>
-          ${stats.last30DaysExpenses.toLocaleString("en-US", {
+          ₹{stats.last30DaysExpenses.toLocaleString("en-US", {
   maximumFractionDigits: 2,
 })}
         </p>
@@ -411,7 +411,7 @@ Saving Rate
         </p>
 
         <p className={styles.statCards.cardValue}>
-          ${stats.savingsRate}%
+          ₹{stats.savingsRate}%
         </p>
       </div>
 <div className={styles.statCards.iconContainer("blue")}>
@@ -504,7 +504,7 @@ Saving Rate
         </div>
 
 <span className={styles.colors.transaction.text(type)}>
-  {type === "income" ? "+" : "-"}${Number(amount)}
+  {type === "income" ? "+" : "-"}₹{Number(amount)}
 </span>
 
       </div>
@@ -566,7 +566,7 @@ Saving Rate
       </div>
       
         <span className={styles.categories.categoryAmount}>
-          ${amount}
+          ₹{amount}
         </span>
 
     </div>
@@ -579,7 +579,7 @@ Saving Rate
         Total Income
       </p>
       <p className={styles.categories.summaryValue}>
-  ${stats.allTimeIncome.toLocaleString()}
+  ₹{stats.allTimeIncome.toLocaleString()}
 </p>
 
     </div>
@@ -589,7 +589,7 @@ Saving Rate
   </p>
 
   <p className={styles.categories.summaryValue}>
-    ${stats.allTimeExpenses.toLocaleString()}
+    ₹{stats.allTimeExpenses.toLocaleString()}
   </p>
 </div>
   </div>
