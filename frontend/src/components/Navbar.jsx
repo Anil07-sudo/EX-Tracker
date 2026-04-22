@@ -72,7 +72,7 @@ const handleLogout = () => {
             <div className={navbarStyles.logoImage}>
   <img src={img1} alt="logo12" />
 </div>
-<span className={navbarStyles.logoText}>Expense Tracker</span>
+<span className={navbarStyles.logoText}>New Matoshree Medical</span>
         </div>
         {/* if the user is present */}
 {user && (

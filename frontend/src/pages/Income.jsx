@@ -187,13 +187,13 @@ const Income = () => {
   });
   const [newTransaction, setNewTransaction] = useState({
     date: new Date().toISOString().split("T")[0],
-    description: "",
+    PatientName: "",
     amount: "",
     type: "income",
     category: "Salary",
   });
   const [editForm, setEditForm] = useState({
-    description: "",
+    PatientName: "",
     amount: "",
     category: "Salary",
     date: new Date().toISOString().split("T")[0],
